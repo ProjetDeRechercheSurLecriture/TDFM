@@ -1,0 +1,14 @@
+.TdfmStimulus {
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	/*top: -10%;*/
+}
+
+.TdfmStimulus .Stimulus-content-left {
+	width: 80%;
+}
+
+.TdfmStimulus .Stimulus-content-left img {
+	width: 100%;
+}
