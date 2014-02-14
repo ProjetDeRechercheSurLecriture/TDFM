@@ -1,0 +1,22 @@
+{
+    "name": "pre-sails",
+    "version": "0.1.0",
+    "dependencies": {
+        "montage": "git://github.com/cesine/montage.git#chromeApp",
+        "digit": "~0.4.0",
+        "oprime-montage": "git://github.com/ProjetDeRechercheSurLecriture/OPrime.git"
+    },
+    "devDependencies": {
+        "grunt": "*",
+        "grunt-exec": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-copy": "*",
+        "cordova": "*",
+        "mop": "*"
+    },
+    "exclude": [
+        "run-tests.html",
+        "test"
+    ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "SAILSalpha",
+  "version": "0.1.1",
+  "description": "",
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+
+  "offline_enabled": true,
+  "permissions": [
+    "unlimitedStorage"
+  ],
+
+  "icons": {
+    "16": "assets/img/ic_sails16.png",
+    "48": "assets/img/ic_sails48.png",
+    "128": "assets/img/ic_sails128.png"
+  },
+
+  "sandbox": {
+    "pages": ["index.html"]
+  }
+}
