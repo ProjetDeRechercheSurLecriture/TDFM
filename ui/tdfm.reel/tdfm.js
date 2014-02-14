@@ -1,9 +1,9 @@
 /**
- * @module ui/sails.reel
+ * @module ui/tdfm.reel
  * @requires oprime-montage/ui/experiment
  */
 var Experiment = require("oprime-montage/ui/experiment.reel").Experiment,
-    designToForceIncludeInMop = require("assets/stimuli/sails_design.json");
+    designToForceIncludeInMop = require("assets/stimuli/tdfm_design.json");
 
 // var enLocales = require("assets/stimuli/locale/en/messages.json");
 // var frLocales = require("assets/stimuli/locale/fr/messages.json");
@@ -11,14 +11,14 @@ var Experiment = require("oprime-montage/ui/experiment.reel").Experiment,
 
 
 /**
- * @class SAILS
+ * @class TDFM
  * @extends Experiment
  */
-var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
+var TDFM = exports.TDFM = Experiment.specialize( /** @lends TDFM# */ {
     constructor: {
-        value: function SAILS() {
+        value: function TDFM() {
             // console.log(designToForceIncludeInMop);
-            this.experimentalDesignSrc = "assets/stimuli/sails_design.json";
+            this.experimentalDesignSrc = "assets/stimuli/tdfm_design.json";
             this.super();
             this.loadDesign(designToForceIncludeInMop);
 
@@ -46,4 +46,4 @@ var SAILS = exports.SAILS = Experiment.specialize( /** @lends SAILS# */ {
     // }
 });
 
-exports.Sails = SAILS;
+exports.Tdfm = TDFM;

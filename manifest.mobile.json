@@ -1,7 +1,7 @@
 {
-  "packageId": "com.github.projetderecherchesurlecriture.sails",
+  "packageId": "com.github.projetderecherchesurlecriture.tdfm",
   "versionCode": 1,
-  "description": "SAILS",
+  "description": "TDFM",
   "author": "Projet PRE",
   "CFBundleVersion": "1.1.1"
 }

@@ -1,5 +1,5 @@
 {
-    "name": "pre-sails",
+    "name": "pre-tdfm",
     "version": "0.1.0",
     "dependencies": {
         "montage": "git://github.com/cesine/montage.git#chromeApp",

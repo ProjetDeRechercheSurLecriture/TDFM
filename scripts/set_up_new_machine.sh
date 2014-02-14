@@ -9,5 +9,5 @@ cca --version || {
 }
 
 cd ../
-git clone git@github.com:ProjetDeRechercheSurLecriture/CordovaChromeSailsWrapper.git
+git clone git@github.com:ProjetDeRechercheSurLecriture/CordovaChromeTdfmWrapper.git
 
