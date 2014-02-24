@@ -19,7 +19,7 @@
                 "crossOrigin": null
             },
             "bindings": {
-                "src": {"<-": "@owner.primeImage ?? '../../assets/img/blank.png'"}
+                "src": {"<-": "@owner.prime.imageFile ?? '../../assets/img/blank.png'"}
             }
         },
 
@@ -32,6 +32,128 @@
             "bindings": {
                 "src": {"<-": "@owner.currentReinforcementImageSrc ?? '../../assets/img/blank.png'"}
             }
+        },
+
+        "showSimplifiedScoreButtonsCondition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "showSimplifiedScoreButtonsCondition"},
+                "removalStrategy": "hide"
+            },
+            "bindings": {
+                "condition": {
+                    "<-": "@owner.application.currentAudience.key != 'experimentAdministratorSpecialist'"
+                }
+            }
+        },
+
+        "showComplexScoreButtonsCondition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "showComplexScoreButtonsCondition"},
+                "removalStrategy": "hide"
+            },
+            "bindings": {
+                "condition": {
+                    "<-": "@owner.application.currentAudience.key == 'experimentAdministratorSpecialist'"
+                }
+            }
+        },
+
+        "subject": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "subject"},
+                "label": "CL"
+            },
+            "bindings": {
+                "classList.has('montage-invisible')": {
+                    "<-": "!@owner.target['subject-clitic']"
+                }
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "owner"}
+            }]
+        },
+
+        "auxiliary": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "auxiliary"},
+                "label": "AUX"
+            },
+            "bindings": {
+                "classList.has('montage-invisible')": {
+                    "<-": "!@owner.target['auxiliary']"
+                }
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "owner"}
+            }]
+        },
+
+        "verb": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "verb"},
+                "label": "V"
+            },
+            "bindings": {
+                "classList.has('montage-invisible')": {
+                    "<-": "!@owner.target['verb-form']"
+                }
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "owner"}
+            }]
+        },
+
+        "object": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "object"},
+                "label": "OBJ"
+            },
+            "bindings": {
+                "classList.has('montage-invisible')": {
+                    "<-": "!@owner.target['object-phrase']"
+                }
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "owner"}
+            }]
+        },
+
+        "correct": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "correct"}
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "owner"}
+            }]
+        },
+
+        "incorrect": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "incorrect"}
+            },
+            "listeners": [{
+                "type": "action",
+                "useCapture": false,
+                "listener": {"@": "owner"}
+            }]
         }
     }
     </script>
@@ -39,11 +161,28 @@
 <body>
     <div data-montage-id="oneImageStimulus" class="TdfmStimulus Main-content-container">
 
+        <div class="Experiment-ExperimenterButtons ">   
+            <div data-montage-id="showComplexScoreButtonsCondition">    
+                <button data-montage-id="subject"></button>
+                <br/>
+                <button data-montage-id="auxiliary"></button>
+                <br/>
+                <button data-montage-id="verb"></button>
+                <br/>
+                <button data-montage-id="object"></button>
+            </div>
+            <div data-montage-id="showSimplifiedScoreButtonsCondition">
+                <button data-montage-id="correct"><i class="fa fa-pagelines"></i></button>
+                <br/>
+                <button data-montage-id="incorrect"><i class="fa fa-twitter"></i></button>
+            </div>
+
+        </div>
         <div class="Stimulus-content-left Stimulus-prime-image-area">
             <img data-montage-id="visualPrime" class="Stimulus-prime-image" src="../../assets/img/blank.png">
         </div>
 
-            <img hidden data-montage-id="reinforcementImage" src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
+        <img hidden data-montage-id="reinforcementImage" src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
         <div class="Stimulus-content-right" >
             <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
             <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 

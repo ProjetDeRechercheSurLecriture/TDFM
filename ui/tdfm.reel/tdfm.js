@@ -49,6 +49,45 @@ var TDFM = exports.TDFM = Experiment.specialize( /** @lends TDFM# */ {
     transform: {
         value: function() {
 
+            for (var subexperimentIndex = 0; subexperimentIndex < x.subexperiments.length; subexperimentIndex++) {
+                var subexperiment = x.subexperiments[subexperimentIndex];
+                subexperiment.scoreSubTotal = 0;
+                for (var stimulusIndex = 0; stimulusIndex < subexperiment.trials.length; stimulusIndex++) {
+                    var stimulus = subexperiment.trials[stimulusIndex];
+                    console.log(stimulus);
+                    stimulus.prime = {
+                        "carrierPhrase": stimulus.auditoryStimulus,
+                        "imageFile": stimulus.primeImage,
+                        "carrierAudioFile": stimulus.audioFile
+                    };
+                    delete stimulus.auditoryStimulus;
+                    delete stimulus.primeImage;
+                    delete stimulus.audioFile;
+
+                    stimulus.target = {
+                        "subject-clitic": {
+                            "phonemic": "æl",
+                            "orthographic": "Elle (al)"
+                        },
+                        "auxiliary": {
+                            "phonemic": "ɑ",
+                            "orthographic": "a"
+                        },
+                        "verb-form": {
+                            "phonemic": "ekʁi",
+                            "orthographic": "écrit"
+                        },
+                        "object-phrase": {
+                            "phonemic": stimulus.audioTarget,
+                            "orthographic": stimulus.audioTarget
+                        }
+                    };
+                    delete stimulus.audioTarget;
+
+
+                }
+            }
+            x.subexperiments[1].trials[6]
         }
     }
 });
