@@ -62,7 +62,10 @@
                 "element": {"#": "currentStimulusIndexBadge"}
             },
             "bindings": {
-                "value": {"<-": "@owner._currentStimulusIndex + 1"}
+                "value": {"<-": "@owner._currentStimulusIndex + 1"},
+                "classList.has('montage-invisible')": {
+                    "<-": "!(@owner._currentStimulusIndex + 1)"
+                }
             }
         },
         "currentStimulus": {
@@ -100,6 +103,11 @@
                     "iso": "iu",
                     "nativeName": "ᐃᓄᒃᑎᑐᑦ"
                 }]
+            },
+            "bindings": {
+                "classList.has('montage-invisible')": {
+                    "<-": "@owner.application.currentAudience.key == 'participant'"
+                }
             }
         },
 
