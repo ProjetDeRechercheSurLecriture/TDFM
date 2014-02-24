@@ -37,9 +37,8 @@ exports.TdfmStimulus = AbstractStimulus.specialize( /** @lends TdfmStimulus# */ 
             console.log(" Button Subject is pressed ");
             this.target["subject-clitic"].score = 1;
             this.score++;
-            this.addOralResponse({
-                score: this.score / 3
-            }, "not_done_yet");
+            this.target.score = this.score / 3;
+            this.addOralResponse(this.target, "not_done_yet");
         }
     },
 
@@ -48,9 +47,8 @@ exports.TdfmStimulus = AbstractStimulus.specialize( /** @lends TdfmStimulus# */ 
             console.log(" Button Auxiliary is pressed ");
             this.target["auxiliary"].score = 1;
             this.score++;
-            this.addOralResponse({
-                score: this.score / 3
-            }, "not_done_yet");
+            this.target.score = this.score / 3;
+            this.addOralResponse(this.target, "not_done_yet");
         }
     },
 
@@ -59,9 +57,8 @@ exports.TdfmStimulus = AbstractStimulus.specialize( /** @lends TdfmStimulus# */ 
             console.log(" Button Verb is pressed ");
             this.target["verb-form"].score = 1;
             this.score++;
-            this.addOralResponse({
-                score: this.score / 3
-            }, "not_done_yet");
+            this.target.score = this.score / 3;
+            this.addOralResponse(this.target, "not_done_yet");
         }
     },
 
@@ -70,27 +67,24 @@ exports.TdfmStimulus = AbstractStimulus.specialize( /** @lends TdfmStimulus# */ 
             console.log(" Button Object is pressed ");
             this.target["object-phrase"].score = 1;
             // this.score++; //object is not obligatory?
-            this.addOralResponse({
-                score: this.score / 3
-            }, "not_done_yet");
+            this.target.score = this.score / 3;
+            this.addOralResponse(this.target, "not_done_yet");
         }
     },
 
     handleCorrectAction: {
         value: function() {
             console.log(" Button Correct is pressed ");
-            this.addOralResponse({
-                score: 1
-            });
+            this.target.score = 1;
+            this.addOralResponse(this.target);
         }
     },
 
     handleIncorrectAction: {
         value: function() {
             console.log(" Button Incorrect is pressed ");
-            this.addOralResponse({
-                score: 0
-            });
+            this.target.score = 0;
+            this.addOralResponse(this.target);
         }
     }
 
