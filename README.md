@@ -1,6 +1,5 @@
-
 # What is TDFM?
-TDFM was developed by Dr. Marquis of the Speech Language Pathology and Audiology Department of Factulty of Medicine, University of Montreal. For more information, contact [Dr. Marquis](https://twitter.com/AlxMarquis)
+«Qu'est-ce qu'ils font?» est un test de dépistage visant à détecter les difficultés d'orthographe chez les enfants avant qu'ils n'apprennent à écrire. «Qu'est-ce qu'ils font?» a été conçu par Drs. Alexandra Marquis et Phaedra Royle (École d'orthophonie et d'audiologie, Faculté de médecine de l'Université de Montréal) et évalue particulièrement la capacité des enfants à utiliser la morphologie correctement lors de la conjugaison de verbes au passé composé. «Qu'est-ce qu'ils font?» est l'un des tests de l'outil de dépistage des difficultés orthographiques appelé «Phophlo».
 
 # License 
 
