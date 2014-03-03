@@ -22,6 +22,9 @@ exports.TdfmStimulus = AbstractStimulus.specialize( /** @lends TdfmStimulus# */ 
             var audioPath = this.audioAssetsPath || "missingpath";
             audioPath += "/";
 
+            if (stimulus.prime.imageFile.indexOf("../assets") > -1) {
+                imagePath = "";
+            }
             stimulus.audioFile = audioPath + stimulus.prime.carrierAudioFile;
             stimulus.prime.imageFile = imagePath + stimulus.prime.imageFile;
             stimulus.responses = [];

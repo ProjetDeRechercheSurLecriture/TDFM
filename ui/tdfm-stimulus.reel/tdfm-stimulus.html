@@ -23,14 +23,15 @@
             }
         },
 
-        "reinforcementImage": {
-            "prototype": "digit/ui/image.reel",
+        "reinforcement": {
+            "prototype": "oprime-montage/ui/reinforcement.reel/reinforcement-counter.reel",
             "properties": {
-                "element": {"#": "reinforcementImage"},
-                "crossOrigin": null
+                "element": {"#": "reinforcement"},
+                "doubleColumn": true
             },
             "bindings": {
-                "src": {"<-": "@owner.currentReinforcementImageSrc ?? '../../assets/img/blank.png'"}
+                "counter": {"<->": "@owner.ownerComponent.templateObjects.reinforcement.counter"},
+                "currentItem": {"<-": "@owner.ownerComponent.templateObjects.reinforcement.currentItem"}
             }
         },
 
@@ -182,18 +183,7 @@
             <img data-montage-id="visualPrime" class="Stimulus-prime-image" src="../../assets/img/blank.png">
         </div>
 
-        <img hidden data-montage-id="reinforcementImage" src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
-        <div class="Stimulus-content-right" >
-            <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
-            <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
-            <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
-            <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
-            <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
-            <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
-            <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
-            <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
-            <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
-            <img src="../../assets/stimuli/image/MorphologyGame_reinforcementcartoon_BEFORE.png"/> 
+        <div  data-montage-id="reinforcement" class="Stimulus-content-right" >
         </div>
         <audio id="audio" src=""></audio>        
     </div>

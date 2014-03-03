@@ -23,6 +23,9 @@ var TDFM = exports.TDFM = Experiment.specialize( /** @lends TDFM# */ {
             this.super();
             this.loadDesign(designToForceIncludeInMop);
 
+            this.canReplayStimuli = true;
+            this.canPauseStimuli = true;
+
             this.contextualizer.addMessagesToContextualizedStrings(enLocales, "en");
             this.contextualizer.addMessagesToContextualizedStrings(frLocales, "fr");
             this.contextualizer.addMessagesToContextualizedStrings(iuLocales, "iu");
